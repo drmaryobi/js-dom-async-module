@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive To Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    li {
+      background-color: #f9f9f9;
+      margin: 10px 0;
+      padding: 12px 20px;
+      border-radius: 5px;
+      color: gray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    li.completed {
+      color: green;
+      font-weight: bold;
+    }
+
+    .tick {
+      display: none;
+      color: green;
+      font-size: 20px;
+    }
+
+    li.completed .tick {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Interactive To Do List</h1>
+
+  <ul>
+    <li onclick="toggleTask(this)">Buy groceries <span class="tick">✓</span></li>
+    <li onclick="toggleTask(this)">Complete assignment <span class="tick">✓</span></li>
+    <li onclick="toggleTask(this)">Call mom <span class="tick">✓</span></li>
+  </ul>
+
+  <script>
+    function toggleTask(item) {
+      item.classList.toggle("completed");
+    }
+  </script>
+
+</body>
+</html>
